@@ -1,0 +1,271 @@
+/* Basic site-wide styles: header and body fonts, structural container */
+body {
+	font: 100% 'Titillium Web', sans-serif;
+	background:url(images/circuit-texture.png) repeat;
+	margin: 0; 
+	padding: 0;
+	color: #000;
+}
+h1 {
+	margin-top: 0px;
+	margin-bottom: 2px;
+	padding-top: 20px;
+}
+body h1, h2, h3, h4, h5 {
+	font-family: 'Audiowide', sans-serif;
+}
+img {
+	border-style:none;
+}
+#container {
+	width: 54em; 
+	background: #fff;
+	margin: 51px auto; 
+	border: none;
+	text-align: left; 
+}
+/* ----------------------------------------------------------------- */
+
+/* Header (banner image and title) styling */
+#header { 
+	background: url(images/header.jpg) no-repeat;
+	background-size: cover; 
+	height: 200px;
+	margin: 0px;
+	text-align:center;
+} 
+#header h1 {
+	margin: 0; 
+	padding: 10px 0; 
+	font-family: 'Geostar Fill', serif;
+	font-size:50px;
+	line-height:200px;
+	vertical-align: middle;
+	text-shadow: 4px 4px 2px #000, 5px 5px 2px #000, 7px 7px 2px #000;
+	color: #30f090; 
+}
+/* -------------------------------------- */
+
+/* Structure and style for "body" (main content) elements */
+#maincontent {
+	padding: 0 28px;
+	/* background: url(images/White-Paper-Pattern.jpg) repeat; */
+	min-height: 50em;
+}
+
+#maincontent a {
+	cursor: pointer;
+	text-decoration: none;
+	color: #E75800;
+}
+
+#maincontent a:hover, #maincontent a:focus 
+{
+	color: #2DF017; 
+	font-weight: bold;
+}
+/* ------------------------------------------------------ */
+
+/* Footer element styles */
+#footer { 
+	padding: 0 28px; 
+	text-align:center;
+	background: #DD731B;
+} 
+
+#footer p {
+	margin: 0; 
+	padding: 10px 0; 
+}
+
+#footer a {
+	text-decoration: none;
+	color: #fff;
+	line-height: 110%;
+}
+
+#footer a:hover, #footer a:focus {
+	font-size: 110%;
+	color: #D8D8D8;
+}
+/* --------------------- */
+
+/* Structure helpers for two-column divs and floating elements */
+div.twocolumn {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+div.threecolumn {
+    -moz-column-count: 3;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
+}
+
+.clearfloat { 
+    clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+/* ----------------------------------------------------------- */
+
+/* Horizontal navigation bar elements */
+#menubar {
+	font-family: 'Audiowide', serif;
+	background: #DD731B;
+	padding: 5px 0;
+	text-align:center;
+}
+
+ul.MenuBar
+{
+	margin:0;
+	padding:0;
+	list-style-type: none;
+	font-size: 100%;
+	cursor: default;
+}
+
+ul.MenuBar li {
+	display: inline-block;
+	padding: 0px 10px;
+}
+
+ul.MenuBar a
+{
+	cursor: pointer;
+	text-decoration: none;
+	color: #fff;
+	line-height:1.4em;
+	padding: 4px 20px 5px 20px;
+}
+
+ul.MenuBar a.selected {
+	font-weight:bold;
+}
+
+ul.MenuBar a:hover, ul.MenuBar a:focus
+{
+	/*font-size: 110%;*/
+	/* color: #F0A117;*/
+	background-color:#EC6969;
+}
+
+#page_nav {
+	position: relative;
+}
+
+#page_nav #prev {
+	position: absolute;
+	right: 0px;
+}
+
+/* ---------------------------------- */
+
+/* Elements for displaying quotes */
+
+ul#quoteslist {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+.quotecontainer {
+	position: relative;
+	padding-right: 130px;
+	margin: 10px 0;
+}
+
+span.speaker {
+	font-style: italic;
+}
+
+span.context {
+	font-style: italic;
+}
+
+span.spacer {
+	display: inline-block;
+	width: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: #747474;
+}
+
+span.date {
+	font-style: italic;
+	color: #747474;
+}
+
+span.voting {
+	position: absolute;
+	right: 0;
+	font-size: 80%;
+}
+
+#qotd {
+	background-color:#d2e3d2;
+	padding: 0 10px;
+}
+
+#qotd h2 {
+	margin-top: 10px;
+	margin-bottom: 5px;
+	padding-top: 10px;
+}
+
+#qotd .quotecontainer {
+	margin: 0;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+#qotd span.date {
+	position: absolute;
+	right: 0;
+	left: inherit;
+	font-style: italic;
+	color: black;
+}
+
+/* ------------------------------ */
+
+ul.speakerlist {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+/* Quote submission form styling */
+
+ul.errorlist {
+	list-style-type: none;
+	color: #FF0000;
+}
+
+.formtable {
+		border-collapse: separate;
+		border-spacing: 0 15px;
+}
+
+.formtable tr > th {
+		padding-right: 10px;
+}
+
+.helptext {
+		font-style: italic;
+		font-size: 90%;
+}
+
+.successpage {
+	font-size: 200%;
+}
+/* ----------------------------- */

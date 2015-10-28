@@ -1,0 +1,17 @@
+{% extends "quotespage/base.html" %}
+
+{% block pagetitle %} | Submit {% endblock %}
+
+{% block content %}
+<h1> Submit a Quote </h1>
+<br>
+<form id="quoteform" action="{% url 'quotespage:submit' %}" method="post">
+	{% csrf_token %}
+	<table class="formtable">
+		{{ form }}
+	</table>
+	<br>
+	<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}

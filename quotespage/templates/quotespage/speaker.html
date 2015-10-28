@@ -1,0 +1,17 @@
+{% extends "quotespage/list_page_base.html" %}
+
+{% block pagetitle %} | Quotes by Speaker {% endblock %}
+
+{% block heading %} <h1> Quotes by {{ speaker_spaces }} </h1> {% endblock %}
+
+{% block next_page_link %}
+<span id="next"><a href="{% url 'quotespage:speaker-pages' speaker pagenum|add:"1" %}"> More </a></span>
+{% endblock %}
+
+{% block page_0_link %}
+<span id="prev"><a href="{% url 'quotespage:speaker' speaker %}"> Previous </a></span>
+{% endblock %}
+
+{% block prev_page_link %}
+<span id="prev"><a href="{% url 'quotespage:speaker-pages' speaker pagenum|add:"-1" %}"> Previous </a></span>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "quotespage/base.html" %}
+{% load bleach_tags %} 
+{% load staticfiles %}
+
+{% block javascript %}
+<script src="{% static 'quotespage/jquery-1.11.2.min.js' %}"></script>
+<script src="{% static 'quotespage/ajax-setup.js' %}"></script>
+<script src="{% static 'quotespage/voting.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+{% block heading %} <h1> Quotes </h1> {% endblock %}
+<br>
+<ul id="quoteslist">
+	{% for quote in quotes_on_page %}
+		<li class="quotecontainer">
+		  <span class="voting" data-quoteid="{{ quote.id }}"> Voting: 
+			  <a href="#" class="downvote">-</a>
+			  <span class="tally">{{ quote.votes }}</span>
+			  <a href="#" class="upvote">+</a>
+		  </span>
+		  <div> {{ quote.quotation|bleach|linebreaksbr }} </div>
+		  <span class="speaker"> &mdash; {{ quote.speaker }}</span>{% if quote.context %}, {% endif %}
+		  <span class="context"> {{ quote.context|bleach }} </span>
+		  <span class="spacer"> &middot; </span>
+		  <span class="date"> {{ quote.date }} </span>
+		</li>
+	{% endfor %}
+</ul>
+<br> 
+<br>
+<div id="page_nav">
+	{% block pagenav %}
+	{% if morepages %}
+		{% block next_page_link %}
+		{% endblock %}
+	{% endif %}
+	{% if pagenum == 1 %}
+		{% block page_0_link %}
+		{% endblock %}
+	{% elif pagenum > 1 %}
+		{% block prev_page_link %}
+		{% endblock %}
+	{% endif %}
+	{% endblock %}
+</div>
+<div class="clearfloat"></div>
+{% endblock %}

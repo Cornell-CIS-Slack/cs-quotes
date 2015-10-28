@@ -1,0 +1,36 @@
+{% extends "quotespage/list_page_base.html" %}
+
+{% load bleach_tags %} 
+
+{% block pagetitle %} | Home {% endblock %}
+
+{% block heading %}
+{% if qotd %}
+	<div id="qotd">
+			<h2> Quote of the Day </h2>
+			<div class="quotecontainer">
+			  <span class="voting" data-quoteid="{{ qotd.id }}"> Voting: 
+				  <a href="#" class="downvote">-</a>
+				  <span class="tally">{{ qotd.votes }}</span>
+				  <a href="#" class="upvote">+</a>
+			  </span>
+			  <div> {{ qotd.quotation|bleach|linebreaksbr }} </div>
+			  <span class="speaker"> &mdash; {{ qotd.speaker }}</span>{% if qotd.context %}, {% endif %}
+			  <span class="context"> {{ qotd.context|bleach }} </span>
+			  <span class="date"> {{ qotd.date }} </span>
+			</div>
+	</div>
+{% endif %}
+<h1> Recent Quotes </h1> {% endblock %}
+
+{% block next_page_link %}
+<span id="next"><a href="{% url 'quotespage:pages' pagenum|add:"1" %}"> More </a></span>
+{% endblock %}
+
+{% block page_0_link %}
+<span id="prev"><a href="{% url 'quotespage:index' %}"> Previous </a></span>
+{% endblock %}
+
+{% block prev_page_link %}
+<span id="prev"><a href="{% url 'quotespage:pages' pagenum|add:"-1" %}"> Previous </a></span>
+{% endblock %}

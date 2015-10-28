@@ -1,0 +1,35 @@
+{% extends "quotespage/base.html" %}
+
+{% block pagetitle %} | Browse by Speaker {% endblock %}
+
+{% block content %}
+<h1> Browse Quotes by Speaker </h1>
+<br>
+<h2> Faculty </h2>
+<div class="threecolumn">
+	<ul class="speakerlist">
+		{% for name, dashed_name in faculty_dashed %}
+			<li><a href="{% url 'quotespage:speaker' speaker=dashed_name %}">{{ name }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<br>
+<h2> Grad Students </h2>
+<div class="threecolumn">
+	<ul class="speakerlist">
+		{% for name, dashed_name in grads_dashed %}
+			<li><a href="{% url 'quotespage:speaker' speaker=dashed_name %}">{{ name }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<br>
+<h2> Invited Speakers </h2>
+<div class="threecolumn">
+	<ul class="speakerlist">
+		{% for name, dashed_name in invited_dashed %}
+			<li><a href="{% url 'quotespage:speaker' speaker=dashed_name %}">{{ name }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<br>
+{% endblock %}

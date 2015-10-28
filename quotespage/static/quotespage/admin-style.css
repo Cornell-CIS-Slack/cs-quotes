@@ -1,0 +1,53 @@
+#header {
+	background: #14682E;
+}
+
+h1 {
+	font-size: 20px;
+}
+
+#branding h1, #branding h1 a:link,
+#branding h1 a:visited {
+	color: #ffffcc;
+}
+
+li, dt, dd {
+	font-size: 12px;
+	line-height: 15px;
+}
+
+blockquote {
+	font-size: 12px;
+}
+
+code, pre {
+	font-size: 12px;
+}
+
+td, th {
+	font-size: 13px;
+	line-height: 15px;
+}
+
+th {
+	font-size: 14px;
+}
+
+thead th {
+	font-size: 14px;
+	line-height: normal;
+}
+
+.module h2, .module caption,
+.inline-group h2 {
+	font-size: 13px;
+}
+
+.row1 {
+	background: #e0f4e2;
+}
+
+#content-related {
+	width: 21em;
+	margin-right: -22em;
+}

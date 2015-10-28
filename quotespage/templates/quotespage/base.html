@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		{% load staticfiles %}
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>{% block title %} CS Department Quotes {% endblock %}{% block pagetitle %}{% endblock %}</title>
+		<link rel="shortcut icon" type="image/gif" href="{% static 'favicon.ico' %}">
+		{% block javascript %} {% endblock %}
+		{% block stylesheet %}
+		<link rel="stylesheet" type="text/css" href="{% static 'quotespage/style.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Geostar+Fill|Titillium+Web:400,400italic,700,700italic|Audiowide' rel='stylesheet' type='text/css'>
+		{% endblock %}
+	</head>
+	<body>
+	<div id="container">
+		<div id="header">
+			{% block header %}<h1> Quotations of Gates Hall </h1> {% endblock %}
+		</div>
+		<div id="menubar">
+			<ul class="MenuBar">
+				<li><a href="{% url 'quotespage:index' %}">Home</a> </li>
+				<li><a href="{% url 'quotespage:submit' %}">Submit a Quote</a> </li>
+				<li><a href="{% url 'quotespage:speaker-list' %}">Browse by Speaker</a> </li>
+				<li><a href="{% url 'quotespage:byvotes' %}">Top Voted</a></li>
+				<li><a href="{% url 'quotespage:about' %}">About</a> </li>
+			</ul>
+		</div>
+		<div id="maincontent">
+			{% block content %} {% endblock %}
+		</div>
+		<div id="footer">
+			{% block footer %}<p><a href="http://www.cs.cornell.edu">CS Department Home</a></p> {% endblock %}
+		</div>
+	</div>
+	</body>
+</html>
+
