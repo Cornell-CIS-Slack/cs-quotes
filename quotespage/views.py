@@ -189,6 +189,8 @@ def random_quote(request):
 		quotes = quotes.filter(date__month=int(request.GET['month']))
 	if 'day' in request.GET:
 		quotes = quotes.filter(date__day=int(request.GET['day']))
+        if quotes.count() == 0:
+                return HttpResponse(json.dumps("", default=json_patch), content_type="application/javascript")
 	rand_index = random.randint(0,quotes.count()-1)
 	quote = quotes[rand_index]
 	return HttpResponse(json.dumps(quote.get_fields_dict(), default=json_patch), content_type="application/javascript")
