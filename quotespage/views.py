@@ -190,7 +190,7 @@ def random_quote(request):
 	if 'day' in request.GET:
 		quotes = quotes.filter(date__day=int(request.GET['day']))
         if quotes.count() == 0:
-                return HttpResponse(json.dumps("", default=json_patch), content_type="application/javascript")
+                return HttpResponse("", content_type="text/text")
 	rand_index = random.randint(0,quotes.count()-1)
 	quote = quotes[rand_index]
 	return HttpResponse(json.dumps(quote.get_fields_dict(), default=json_patch), content_type="application/javascript")
