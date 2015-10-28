@@ -1,1 +1,4 @@
-quotes_django/settings.py
+quotes_django/secret_key.txt
+quotes_django/db_pw.txt
+django.log
+*.pyc
