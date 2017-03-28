@@ -1,4 +1,5 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
 from quotespage import views
 
 urlpatterns = patterns('',
@@ -6,8 +7,8 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
     url(r'^page/(?P<pagenum>\d+)/$', views.index, name='pages'),
     url(r'^submit/$', views.submit, name='submit'),
-    url(r'^submit/success/$', views.success, name='success'),
-    url(r'^about/$', views.about, name='about'),
+    url(r'^submit/success/$', TemplateView.as_view(template_name="quotespage/success.html"), name='success'),
+    url(r'^about/$', TemplateView.as_view(template_name="quotespage/about.html"), name='about'),
 	url(r'^speakers/$', views.speaker_list, name='speaker-list'),
 	url(r'^speaker/(?P<speaker>[-,%.\w]+)/$', views.speaker_archive, name='speaker'),
 	url(r'^speaker/(?P<speaker>[-,%.\w]+)/(?P<pagenum>\d+)/$', views.speaker_archive, name='speaker-pages'),
