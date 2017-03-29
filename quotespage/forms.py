@@ -25,3 +25,7 @@ class NewQuoteForm(forms.ModelForm):
 				'date' : extras.widgets.SelectDateWidget(years=range(2000,2020)),
 		}
 
+class SearchForm(forms.Form):
+
+	q = forms.CharField(label='Search by Quote or Context', max_length=500)
+

@@ -3,6 +3,7 @@ from submit_view import submit
 from top_voted_view import top_voted
 from speaker_views import speaker_archive
 from speaker_views import speaker_list
+from search_view import search
 from ajax_handlers import vote
 from ajax_handlers import generate_api_key
 from ajax_handlers import remote_submit

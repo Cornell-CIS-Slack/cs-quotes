@@ -159,6 +159,7 @@ ul.MenuBar a:hover, ul.MenuBar a:focus
 	background-color:#EC6969;
 }
 
+
 #page_nav {
 	position: relative;
 }
@@ -169,6 +170,23 @@ ul.MenuBar a:hover, ul.MenuBar a:focus
 }
 
 /* ---------------------------------- */
+
+/* Horizontal search bar elements */
+
+#searchbar {
+	font-family: 'Audiowide', serif;
+	background: #DD731B;
+	padding: 5px 0;
+	text-align:center;
+	margin: 0 -28px;
+}
+
+#searchbar label {
+	color: #fff;
+	margin-right: 10px;
+}
+
+/* ------------------------------ */
 
 /* Elements for displaying quotes */
 

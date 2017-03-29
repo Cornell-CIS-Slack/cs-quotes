@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie 
 from quotespage.models import Quote
+from quotespage.forms import SearchForm
 import datetime
 import random
 
@@ -19,7 +20,11 @@ def index(request, pagenum="0"):
 	else:
 		morepages = False
 	
-	context = {'quotes_on_page' : quotes_on_page, 'pagenum' : ipagenum, 'morepages' : morepages}
+	search_form = SearchForm()
+	context = {'search_form' : search_form, 
+			'quotes_on_page' : quotes_on_page, 
+			'pagenum' : ipagenum, 
+			'morepages' : morepages}
 	#On the first page, display a random quote of the day
 	if ipagenum == 0:
 		todays_quotes = Quote.objects.filter(
