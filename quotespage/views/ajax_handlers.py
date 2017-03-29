@@ -14,14 +14,14 @@ def vote(request):
 	quoteid = int(request.POST['id'])
 	upvote = (request.POST['upvote'].lower() == "true")
 	resp_dict = {}
-	quote = Quote.objects.get(id=quoteid)
-	if not quote:
-		resp_dict['success']=False
-	else:
+	try:
+		quote = Quote.objects.get(id=quoteid)
 		quote.votes = (quote.votes + 1 if upvote else quote.votes - 1)
 		quote.save()
 		resp_dict['success'] = True
 		resp_dict['new_count'] = quote.votes
+	except Quote.DoesNotExist:
+		resp_dict['success']=False
 
 	return HttpResponse(json.dumps(resp_dict), content_type="application/javascript")
 

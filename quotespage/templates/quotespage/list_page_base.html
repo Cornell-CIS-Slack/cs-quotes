@@ -24,6 +24,8 @@
 		  <span class="context"> {{ quote.context|bleach }} </span>
 		  <span class="spacer"> &middot; </span>
 		  <span class="date"> {{ quote.date }} </span>
+		  <span class="spacer"> &middot; </span>
+		  <a class="permalink" href= {% url 'quotespage:permalink' quoteid=quote.id %}> Permalink </a>
 		</li>
 	{% endfor %}
 </ul>

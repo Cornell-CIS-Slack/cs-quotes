@@ -50,7 +50,7 @@ img {
 #maincontent {
 	padding: 0 28px;
 	/* background: url(images/White-Paper-Pattern.jpg) repeat; */
-	min-height: 50em;
+	min-height: 20em;
 }
 
 #maincontent a {
@@ -227,6 +227,11 @@ span.voting {
 	position: absolute;
 	right: 0;
 	font-size: 80%;
+}
+
+.quotecontainer a.permalink {
+	font-style: italic;
+	font-size: 90%;
 }
 
 #qotd {
