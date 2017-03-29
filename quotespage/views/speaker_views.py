@@ -35,12 +35,16 @@ def speaker_list(request):
 					speaker_class=Quote.GRAD_STUDENT).values_list('speaker', flat=True).distinct()
 	invited = Quote.objects.order_by('speaker').filter(approved=True,
 					speaker_class=Quote.INVITED_SPEAKER).values_list('speaker', flat=True).distinct()
+	other = Quote.objects.order_by('speaker').filter(approved=True,
+					speaker_class=Quote.OTHER).values_list('speaker', flat=True).distinct()
 	faculty_dashed = [(speaker, slugify_name(speaker)) for speaker in faculty]
 	grads_dashed = [(speaker, slugify_name(speaker)) for speaker in grads]
 	invited_dashed = [(speaker, slugify_name(speaker)) for speaker in invited]
+	other_dashed = [(speaker, slugify_name(speaker)) for speaker in other]
 	context = {'faculty_dashed' : faculty_dashed, 
 					'grads_dashed' : grads_dashed, 
-					'invited_dashed' : invited_dashed}
+					'invited_dashed' : invited_dashed,
+					'other_dashed' : other_dashed}
 	return render(request, 'quotespage/speaker_list.html', context)
 
 def slugify_name(name):

@@ -32,4 +32,13 @@
 	</ul>
 </div>
 <br>
+<h2> Other </h2>
+<div class="threecolumn">
+	<ul class="speakerlist">
+		{% for name, dashed_name in other_dashed %}
+			<li><a href="{% url 'quotespage:speaker' speaker=dashed_name %}">{{ name }}</a></li>
+		{% endfor %}
+	</ul>
+</div>
+<br>
 {% endblock %}

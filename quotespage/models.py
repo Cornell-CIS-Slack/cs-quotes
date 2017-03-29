@@ -6,10 +6,12 @@ class Quote(models.Model):
 	FACULTY = 'FAC'
 	GRAD_STUDENT = 'GS'
 	INVITED_SPEAKER = 'INV'
+	OTHER = 'OTH'
 	SPEAKER_CLASS_CHOICES = (
 			(FACULTY, "Faculty"),
 			(GRAD_STUDENT, "Graduate Student"),
 			(INVITED_SPEAKER, "Invited Speaker"),
+			(OTHER, "Other"),
 			)
 	
 	date = models.DateField()
