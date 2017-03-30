@@ -10,8 +10,11 @@ $(document).ready(function() {
 });
 
 function vote(caller, quote_id, is_upvote) {
-	if( $(caller).parent().data("voted") === true ) {
-		return;
+	if(typeof Cookies.get('log') !== "undefined") {
+		//If the vote-log object has any entry for this quote ID, it's already been voted
+		if(Cookies.getJSON('log')[quote_id] !== undefined) {
+			return;
+		}
 	}
 	$.ajax({
 		type: "POST",
@@ -21,7 +24,15 @@ function vote(caller, quote_id, is_upvote) {
 	}).done(function(response) {
 		if(response.success === true) {
 			$(caller).siblings(".tally").text(response.new_count);
-			$(caller).parent().data("voted", true);
+			//Update or set the vote-log cookie
+			var votelog;
+			if(typeof Cookies.get('log') === "undefined") {
+				votelog = {};
+			} else {
+				votelog = Cookies.getJSON('log');
+			}
+			votelog[quote_id] = true;
+			Cookies.set('log', votelog, {expires : 1});
 		}
 	});
 }
