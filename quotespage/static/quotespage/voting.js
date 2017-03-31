@@ -18,7 +18,7 @@ function vote(caller, quote_id, is_upvote) {
 	}
 	$.ajax({
 		type: "POST",
-		url: "http://quotes.cs.cornell.edu/api/vote/",
+		url: "https://quotes.cs.cornell.edu/api/vote/",
 		data: {"id" : quote_id, "upvote" : is_upvote},
 		dataType: "json"
 	}).done(function(response) {
