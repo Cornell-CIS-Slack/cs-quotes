@@ -22,6 +22,8 @@ class NewQuoteForm(forms.ModelForm):
 				'quotation' : 'Limited HTML allowed. Possible tags: &lt;p&gt;, &lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;em&gt;, &lt;strong&gt;, &lt;sup&gt;, &lt;sub&gt;, &lt;span&gt;. Newlines will be converted to &lt;br&gt; automatically.' 
 		}
 		widgets = {
+				'quotation' : forms.Textarea(attrs={'rows': 10, 'class': 'stretch_to_fill'}),
+				'context' : forms.TextInput(attrs={'maxlength' : 256, 'class' : 'stretch_to_fill'}),
 				'date' : extras.widgets.SelectDateWidget(years=range(2000,2020)),
 		}
 
