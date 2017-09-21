@@ -1,9 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 from django.views.generic import TemplateView
 from quotespage import views
 
-urlpatterns = patterns('',
-
+urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^page/(?P<pagenum>\d+)/$', views.index, name='pages'),
     url(r'^submit/$', views.submit, name='submit'),
@@ -20,4 +19,4 @@ urlpatterns = patterns('',
 	url(r'^api/random/$', views.random_quote, name='random'),
 	url(r'^api/genkey/$', views.generate_api_key, name='genkey'),
 	url(r'^api/submit/$', views.remote_submit, name='remote-submit'),
-)
+]

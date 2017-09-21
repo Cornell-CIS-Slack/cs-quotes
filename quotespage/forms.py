@@ -1,5 +1,4 @@
 from django import forms
-from django.forms import extras
 from .models import Quote 
 import datetime
 
@@ -24,7 +23,7 @@ class NewQuoteForm(forms.ModelForm):
 		widgets = {
 				'quotation' : forms.Textarea(attrs={'rows': 10, 'class': 'stretch_to_fill'}),
 				'context' : forms.TextInput(attrs={'maxlength' : 256, 'class' : 'stretch_to_fill'}),
-				'date' : extras.widgets.SelectDateWidget(years=range(2000,2020)),
+				'date' : forms.SelectDateWidget(years=range(2000,2020)),
 		}
 
 class SearchForm(forms.Form):

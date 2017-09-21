@@ -4,17 +4,21 @@ WSGI config for quotes_django project.
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.7/howto/deployment/wsgi/
+https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "quotes_django.settings")
-
 import sys
-sys.path.append("/users/ejt64/.local/lib/python2.7/site-packages")
+my_user_packages = "/users/ejt64/.local/lib/python2.7/site-packages"
+if my_user_packages not in sys.path:
+	sys.path.append(my_user_packages)
 print >>sys.stderr, "sys.path is: " + str(sys.path)
 
 from django.core.wsgi import get_wsgi_application
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "quotes_django.settings")
+
+
 application = get_wsgi_application()
 
 # Uncomment this to force WSGI to restart when it's hung

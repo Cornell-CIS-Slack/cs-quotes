@@ -1,4 +1,5 @@
 quotes_django/secret_key.txt
 quotes_django/db_pw.txt
 django.log
+cronjob.log
 *.pyc
