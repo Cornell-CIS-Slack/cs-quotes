@@ -24,7 +24,12 @@
 		  <span class="speaker"> &mdash; {{ quote.speaker }}</span>{% if quote.context %}, {% endif %}
 		  <span class="context"> {{ quote.context|bleach }} </span>
 		  <span class="spacer"> &middot; </span>
-		  <span class="date"> {{ quote.date }} </span>
+		  {# Hack to handle quotes without a precise date: If the date is January 1, assume the date is unknown and only display the year. #}
+		  {%if quote.date.month == 1 and quote.date.day == 1 %}
+			<span class="date"> {{ quote.date.year }} </span>
+		  {% else %}
+			<span class="date"> {{ quote.date }} </span>
+		  {% endif %}
 		  <span class="spacer"> &middot; </span>
 		  <a class="permalink" href= {% url 'quotespage:permalink' quoteid=quote.id %}> Permalink </a>
 		</li>

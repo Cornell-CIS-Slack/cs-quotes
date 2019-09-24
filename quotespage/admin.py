@@ -12,7 +12,7 @@ class QuoteAdmin(admin.ModelAdmin):
 	fields=['approved', 'quotation', 'speaker', 'speaker_class', 'context', 'date', 'votes']
 	list_display = ('quotation', 'speaker', 'date', 'approved')
 	list_filter = ['approved', 'date']
-	search_fields = ['quotation', 'speaker']
+	search_fields = ['quotation', 'speaker', 'date']
 	actions = ['approve_quotes']
 
 	def approve_quotes(self, request, queryset):
