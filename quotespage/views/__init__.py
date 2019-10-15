@@ -5,7 +5,8 @@ from speaker_views import speaker_archive
 from speaker_views import speaker_list
 from search_view import search
 from permalink_view import permalink
+from random_view import random_quote
 from ajax_handlers import vote
 from ajax_handlers import generate_api_key
 from ajax_handlers import remote_submit
-from ajax_handlers import random_quote
+from ajax_handlers import json_random_quote

@@ -2,7 +2,7 @@
 {% load bleach_tags %} 
 {% load staticfiles %}
 
-{% block pagetitle %} | Permanent Link to Quote by {{quote.speaker}} {% endblock %}
+{% block pagetitle %} | Random Quote {% if year %} From {{ year }} {% endif %} {% endblock %}
 
 {% block javascript %}
 <script src="{% static 'quotespage/jquery-1.11.2.min.js' %}"></script>
@@ -18,8 +18,9 @@
 		<input type="submit" value="Search"/>
 	</form>
 </div>
-{% block heading %} <h1> Quote </h1> {% endblock %}
+{% block heading %} <h1> Random Quote {% if year %} From {{ year }} {% endif %} </h1> {% endblock %}
 <br>
+{% if quote %}
 <div class="quotecontainer">
 	<span class="voting" data-quoteid="{{ quote.id }}"> Voting: 
 		<a href="#" class="downvote">-</a>
@@ -36,7 +37,12 @@
 	{% else %}
 		<span class="date"> {{ quote.date }} </span>
 	{% endif %}
+	<span class="spacer"> &middot; </span>
+	<a class="permalink" href={% url 'quotespage:permalink' quoteid=quote.id %}> Permalink </a>
 </div>
+{% else %}
+<p> No quotes matched your filters. </p>
+{% endif %}
 <div class="clearfloat"></div>
 {% endblock %}
 

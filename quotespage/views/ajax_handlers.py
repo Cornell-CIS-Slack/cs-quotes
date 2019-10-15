@@ -51,7 +51,7 @@ def remote_submit(request):
 	new_quote.save()
 	return HttpResponse(status=201)
 
-def random_quote(request):
+def json_random_quote(request):
 	"""Handles AJAX requests for a random quote."""
 	quotes = Quote.objects.filter(approved=True)
 	if 'speaker' in request.GET:

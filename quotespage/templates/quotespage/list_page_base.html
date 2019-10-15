@@ -31,7 +31,7 @@
 			<span class="date"> {{ quote.date }} </span>
 		  {% endif %}
 		  <span class="spacer"> &middot; </span>
-		  <a class="permalink" href= {% url 'quotespage:permalink' quoteid=quote.id %}> Permalink </a>
+		  <a class="permalink" href={% url 'quotespage:permalink' quoteid=quote.id %}> Permalink </a>
 		</li>
 	{% endfor %}
 </ul>
