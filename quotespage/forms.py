@@ -23,7 +23,7 @@ class NewQuoteForm(forms.ModelForm):
 		widgets = {
 				'quotation' : forms.Textarea(attrs={'rows': 10, 'class': 'stretch_to_fill'}),
 				'context' : forms.TextInput(attrs={'maxlength' : 256, 'class' : 'stretch_to_fill'}),
-				'date' : forms.SelectDateWidget(years=range(2000,2020)),
+				'date' : forms.SelectDateWidget(years=range(1975,2030)),
 		}
 
 class SearchForm(forms.Form):
