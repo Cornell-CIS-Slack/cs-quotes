@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{% block title %} CS Department Quotes {% endblock %}{% block pagetitle %}{% endblock %}</title>
 		<link rel="shortcut icon" type="image/gif" href="{% static 'favicon.ico' %}">
-		{% block javascript %} {% endblock %}
 		{% block stylesheet %}
 		<link rel="stylesheet" type="text/css" href="{% static 'quotespage/style.css' %}">
 		<link href='//fonts.googleapis.com/css?family=Geostar+Fill|Titillium+Web:400,400italic,700,700italic|Audiowide' rel='stylesheet' type='text/css'>
@@ -34,6 +33,7 @@
 			{% block footer %}<p><a href="http://www.cs.cornell.edu">CS Department Home</a></p> {% endblock %}
 		</div>
 	</div>
+	{% block javascript %} {% endblock %}
 	</body>
 </html>
 
