@@ -18,10 +18,10 @@ with open(os.path.join(BASE_DIR, 'quotes_django/secret_key.txt')) as keyfile:
 	SECRET_KEY = keyfile.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # List of strings representing domain names this Django installation can serve
-ALLOWED_HOSTS = ['quotes.cs.cornell.edu']
+ALLOWED_HOSTS = ['quotes.cs.cornell.edu', 'localhost']
 
 ADMINS = [('Edward', 'edward@cs.cornell.edu')]
 
@@ -64,12 +64,13 @@ INSTALLED_APPS = (
     'quotespage',
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
+        'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+#    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -92,7 +93,8 @@ DATABASES = {
         'NAME': 'quotes',
 	'USER': 'ejt64',
 	'PASSWORD': db_password,
-	'HOST': '/extra/mysql/var/mysql.sock',
+	#'HOST': '/extra/mysql/var/mysql.sock',
+            'HOST': '/var/run/mysqld/mysqld.sock',
     }
 }
 

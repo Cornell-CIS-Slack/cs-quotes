@@ -3,7 +3,7 @@
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block extrastyle %}
-{% load staticfiles %}
+{% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'quotespage/admin-style.css' %}">
 {% endblock %}
 

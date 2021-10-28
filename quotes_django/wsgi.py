@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 
 import os
 import sys
-my_user_packages = "/users/ejt64/.local/lib/python2.7/site-packages"
-if my_user_packages not in sys.path:
-	sys.path.append(my_user_packages)
-print >>sys.stderr, "sys.path is: " + str(sys.path)
+#my_user_packages = "/users/ejt64/.local/lib/python2.7/site-packages"
+#if my_user_packages not in sys.path:
+#	sys.path.append(my_user_packages)
+#print >>sys.stderr, "sys.path is: " + str(sys.path)
 
 from django.core.wsgi import get_wsgi_application
 

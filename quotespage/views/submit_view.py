@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from quotespage.forms import NewQuoteForm
 
 def submit(request):
@@ -14,7 +14,7 @@ def submit(request):
 	#if this is a GET request, we need to display the "submit a quote" page
 	else:
 		form = NewQuoteForm()
-	
+
 	context = {'form': form}
-	
+
 	return render(request, 'quotespage/submit.html', context)
